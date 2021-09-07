@@ -1,0 +1,20 @@
+# | - will print the seperated lines, as it was
+# > - will print the seperated lines, as one single line
+---
+- hosts: all
+  tasks:
+  
+  - name: Create File1 with content
+    copy: 
+      dest: "/tmp/file1.txt"
+      content: | 
+        hey
+        hello  
+    
+  - name: Create File2
+    copy: 
+      dest: "/tmp/file2.txt"
+      content: >
+        hey
+        hello
+
